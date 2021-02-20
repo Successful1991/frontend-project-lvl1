@@ -27,5 +27,3 @@ jobs:
           hexlet-id: ${{ secrets.HEXLET_ID }}
 
       - name: run linter
-        # Run Linter
-        run: make lint
