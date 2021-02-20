@@ -1,7 +1,7 @@
 import randomInteger from '../secondary.js';
 import logicGame from '../index.js';
 
-function rightAnswer(number) {
+function checkAnswer(number) {
   if (number === undefined) {
     return null;
   }
@@ -20,7 +20,7 @@ function even() {
   logicGame(
     'Answer "yes" if the number is even, otherwise answer "no".',
     createQuestion,
-    rightAnswer,
+    checkAnswer,
   );
 }
 

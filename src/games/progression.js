@@ -1,7 +1,7 @@
 import logicGame from '../index.js';
 import randomInteger from '../secondary.js';
 
-function rightAnswer(question) {
+function checkAnswer(question) {
   if (question === undefined) {
     return null;
   }
@@ -27,7 +27,7 @@ function progression() {
   logicGame(
     'What number is missing in the progression?',
     createQuestion,
-    rightAnswer,
+    checkAnswer,
   );
 }
 

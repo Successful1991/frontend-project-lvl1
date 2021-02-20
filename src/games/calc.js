@@ -1,7 +1,7 @@
 import randomInteger from '../secondary.js';
 import logicGame from '../index.js';
 
-function rightAnswer(question) {
+function checkAnswer(question) {
   if (question === undefined) {
     return null;
   }
@@ -33,7 +33,7 @@ function calc() {
   logicGame(
     'What is the result of the expression?',
     createQuestion,
-    rightAnswer,
+    checkAnswer,
   );
 }
 

@@ -5,6 +5,8 @@ function logicGame(questionText, task, checkAnswer) {
   let question;
   const userName = greeting();
   let step = 0;
+  console.log(questionText);
+
   do {
     question = task();
     const rightAnswer = checkAnswer(question.result);

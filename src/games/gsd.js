@@ -1,7 +1,7 @@
 import logicGame from '../index.js';
 import randomInteger from '../secondary.js';
 
-function rightAnswer(answer) {
+function checkAnswer(answer) {
   if (!Array.isArray(answer) || answer.length < 2) {
     return null;
   }
@@ -31,7 +31,7 @@ function gsd() {
   logicGame(
     'Find the greatest common divisor of given numbers.',
     createQuestion,
-    rightAnswer,
+    checkAnswer,
   );
 }
 
