@@ -3,7 +3,7 @@ import randomInteger from '../secondary.js';
 
 function checkAnswer(answer) {
   if (!Array.isArray(answer) || answer.length < 2) {
-    return null;
+    return answer;
   }
 
   const [divisor1, divisor2] = answer;
@@ -27,7 +27,7 @@ function createQuestion() {
   };
 }
 
-function gsd() {
+function gcd() {
   logicGame(
     'Find the greatest common divisor of given numbers.',
     createQuestion,
@@ -35,4 +35,4 @@ function gsd() {
   );
 }
 
-export default gsd;
+export default gcd;
