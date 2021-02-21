@@ -11,7 +11,7 @@ function logicGame(descriptionTask, task, checkAnswer) {
     question = task();
     const rightAnswer = checkAnswer(question.result);
 
-    console.log('Question: ',question.expression);
+    console.log('Question:', question.expression);
     let userAnswer = readlineSync.question('Your answer: ');
 
     if (typeof rightAnswer === 'number' && !Number.isNaN(Number(userAnswer))) {
