@@ -1,30 +1,29 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
-function logicGame(questionText, task, checkAnswer) {
+function logicGame(descriptionTask, task, checkAnswer) {
   let question;
   const userName = greeting();
   let step = 0;
-  console.log(questionText);
+  console.log(descriptionTask);
 
   do {
     question = task();
     const rightAnswer = checkAnswer(question.result);
 
     console.log('Question: ', question.expression);
-    let value = readlineSync.question('Your answer: ');
+    let userAnswer = readlineSync.question('Your userAnswer: ');
 
-    if (typeof rightAnswer === 'number' && !Number.isNaN(Number(value))) {
-      value = Number(value);
+    if (typeof rightAnswer === 'number' && !Number.isNaN(Number(userAnswer))) {
+      userAnswer = Number(userAnswer);
     }
-    if (rightAnswer === value) {
+    if (rightAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${value}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
+      console.log(`'${userAnswer}' is wrong userAnswer ;(. Correct userAnswer was '${rightAnswer}'.
       Let's try again, ${userName}!`);
       return;
     }
-
     step += 1;
   } while (step < 3);
 
