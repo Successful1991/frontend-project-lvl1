@@ -12,7 +12,7 @@ function logicGame(descriptionTask, task, checkAnswer) {
     const rightAnswer = checkAnswer(question.result);
 
     console.log('Question: ', question.expression);
-    let userAnswer = readlineSync.question('Your userAnswer: ');
+    let userAnswer = readlineSync.question('Your answer: ');
 
     if (typeof rightAnswer === 'number' && !Number.isNaN(Number(userAnswer))) {
       userAnswer = Number(userAnswer);
@@ -20,7 +20,7 @@ function logicGame(descriptionTask, task, checkAnswer) {
     if (rightAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong userAnswer ;(. Correct userAnswer was '${rightAnswer}'.
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
       Let's try again, ${userName}!`);
       return;
     }
