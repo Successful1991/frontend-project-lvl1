@@ -2,9 +2,6 @@ import logicGame from '../index.js';
 import randomInteger from '../secondary.js';
 
 function checkAnswer(question) {
-  if (question === undefined) {
-    return null;
-  }
   return question;
 }
 

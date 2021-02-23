@@ -1,11 +1,7 @@
-import logicGame from '../index.js';
+import startGame from '../index.js';
 import randomInteger from '../secondary.js';
 
 function checkAnswer(answer) {
-  if (!Array.isArray(answer) || answer.length < 2) {
-    return answer;
-  }
-
   const [divisor1, divisor2] = answer;
   let commonDivisor = divisor1 < divisor2 ? divisor1 : divisor2;
   do {
@@ -28,7 +24,7 @@ function createQuestion() {
 }
 
 function gcd() {
-  logicGame(
+  startGame(
     'Find the greatest common divisor of given numbers.',
     createQuestion,
     checkAnswer,
