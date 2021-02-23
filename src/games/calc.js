@@ -12,6 +12,7 @@ function createQuestion() {
     case 1:
       return {
         expression: `${operand1} - ${operand2}`,
+<<<<<<< HEAD
         result: operand1 - operand2,
       };
     case 2:
@@ -24,6 +25,23 @@ function createQuestion() {
         expression: `${operand1} * ${operand2}`,
         result: operand1 * operand2,
       };
+=======
+        result: operand1 - operand2
+      };
+      break;
+    case 2:
+      return {
+        expression: `${operand1} + ${operand2}`,
+        result = operand1 + operand2
+      }
+      break;
+    default:
+      return {
+        expression = `${operand1} * ${operand2}`,
+        result = operand1 * operand2
+      }
+      break;
+>>>>>>> 571b4bf2a1d10ec7567bcca329a5bb61d50be6cd
   }
 }
 
