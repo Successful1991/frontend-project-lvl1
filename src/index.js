@@ -2,8 +2,9 @@ import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
 function startGame(parameters) {
-  const { taskDescription, createTask, amountRaunds} = parameters;
+  const { taskDescription, createTask, amountRaunds } = parameters;
   let task;
+  console.log(parameters);
   const userName = greeting();
   console.log(taskDescription);
 

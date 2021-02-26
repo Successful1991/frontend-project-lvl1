@@ -7,22 +7,22 @@ function createTask() {
     case 1:
       return {
         question: `${operand1} - ${operand2}`,
-        answer: toString(operand1 - operand2),
+        answer: (operand1 - operand2).toString(),
       };
     case 2:
       return {
         question: `${operand1} + ${operand2}`,
-        answer: toString(operand1 + operand2),
+        answer: (operand1 + operand2).toString(),
       };
     default:
       return {
         question: `${operand1} * ${operand2}`,
-        answer: toString(operand1 * operand2),
+        answer: (operand1 * operand2).toString(),
       };
   }
 }
 
-function calc(amountRaunds = 3) {
+function getCalcParam(amountRaunds = 3) {
   return {
     taskDescription: 'What is the result of the expression?',
     createTask,
@@ -30,4 +30,4 @@ function calc(amountRaunds = 3) {
   };
 }
 
-export default calc;
+export default getCalcParam;

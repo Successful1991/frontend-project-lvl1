@@ -7,12 +7,12 @@ function getGcd(answer) {
   for (let i = commonDivisor; i > 1; i -= 1) {
     if (divisor1 % commonDivisor === 0
     && divisor2 % commonDivisor === 0) {
-      return commonDivisor;
+      return commonDivisor.toString();
     }
     commonDivisor -= 1;
   }
 
-  return 1;
+  return '1';
 }
 
 function createTask() {
@@ -24,7 +24,7 @@ function createTask() {
   };
 }
 
-function gcd(amountRaunds = 3) {
+function getGcdParam(amountRaunds = 3) {
   return {
     taskDescription: 'Find the greatest common divisor of given numbers.',
     createTask,
@@ -32,4 +32,4 @@ function gcd(amountRaunds = 3) {
   };
 }
 
-export default gcd;
+export default getGcdParam;

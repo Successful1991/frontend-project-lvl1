@@ -18,7 +18,7 @@ function createTask() {
   };
 }
 
-function prime(amountRaunds = 3) {
+function getPrimeParam(amountRaunds = 3) {
   return {
     taskDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     createTask,
@@ -26,4 +26,4 @@ function prime(amountRaunds = 3) {
   };
 }
 
-export default prime;
+export default getPrimeParam;

@@ -8,12 +8,12 @@ function createTask() {
   };
 }
 
-function even(amountRaunds = 3) {
+function getEvenParam(amountRaunds = 3) {
   return {
     taskDescription: 'Answer "yes" if the number is even, otherwise answer "no".',
     createTask,
-    amountRaunds
+    amountRaunds,
   };
 }
 
-export default even;
+export default getEvenParam;
