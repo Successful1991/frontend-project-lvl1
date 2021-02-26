@@ -1,38 +1,33 @@
 import randomInteger from '../secondary.js';
-import startGame from '../index.js';
 
-function checkAnswer(question) {
-  return question;
-}
-
-function createQuestion() {
+function createTask() {
   const operand1 = randomInteger(1, 20);
   const operand2 = randomInteger(1, 20);
   switch (randomInteger(1, 3)) {
     case 1:
       return {
-        expression: `${operand1} - ${operand2}`,
-        result: operand1 - operand2,
+        question: `${operand1} - ${operand2}`,
+        answer: toString(operand1 - operand2),
       };
     case 2:
       return {
-        expression: `${operand1} + ${operand2}`,
-        result: operand1 + operand2,
+        question: `${operand1} + ${operand2}`,
+        answer: toString(operand1 + operand2),
       };
     default:
       return {
-        expression: `${operand1} * ${operand2}`,
-        result: operand1 * operand2,
+        question: `${operand1} * ${operand2}`,
+        answer: toString(operand1 * operand2),
       };
   }
 }
 
-function calc() {
-  startGame(
-    'What is the result of the expression?',
-    createQuestion,
-    checkAnswer,
-  );
+function calc(amountRaunds = 3) {
+  return {
+    taskDescription: 'What is the result of the expression?',
+    createTask,
+    amountRaunds,
+  };
 }
 
 export default calc;

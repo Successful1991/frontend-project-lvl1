@@ -1,34 +1,35 @@
-import startGame from '../index.js';
 import randomInteger from '../secondary.js';
 
-function checkAnswer(answer) {
+function getGcd(answer) {
   const [divisor1, divisor2] = answer;
   let commonDivisor = divisor1 < divisor2 ? divisor1 : divisor2;
-  do {
+
+  for (let i = commonDivisor; i > 1; i -= 1) {
     if (divisor1 % commonDivisor === 0
     && divisor2 % commonDivisor === 0) {
       return commonDivisor;
     }
     commonDivisor -= 1;
-  } while (commonDivisor > 1);
+  }
+
   return 1;
 }
 
-function createQuestion() {
+function createTask() {
   const value1 = randomInteger(1, 100);
   const value2 = randomInteger(1, 100);
   return {
-    expression: `${value1} ${value2}`,
-    result: [value1, value2],
+    question: `${value1} ${value2}`,
+    answer: getGcd([value1, value2]),
   };
 }
 
-function gcd() {
-  startGame(
-    'Find the greatest common divisor of given numbers.',
-    createQuestion,
-    checkAnswer,
-  );
+function gcd(amountRaunds = 3) {
+  return {
+    taskDescription: 'Find the greatest common divisor of given numbers.',
+    createTask,
+    amountRaunds,
+  };
 }
 
 export default gcd;

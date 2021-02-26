@@ -1,22 +1,22 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
-function startGame(taskDescription, task, checkAnswer) {
-  let question;
+function startGame(parameters) {
+  const { taskDescription, createTask, amountRaunds} = parameters;
+  let task;
   const userName = greeting();
   console.log(taskDescription);
 
-  for (let i = 0; i < 3; i += 1) {
-    question = task();
-    const rightAnswer = checkAnswer(question.result);
+  for (let i = 0; i < amountRaunds; i += 1) {
+    task = createTask();
 
-    console.log('Question:', question.expression);
+    console.log('Question:', task.question);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (rightAnswer.toString() === userAnswer) {
+    if (task.answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${task.answer}'.
       Let's try again, ${userName}!`);
       return;
     }
@@ -24,4 +24,5 @@ function startGame(taskDescription, task, checkAnswer) {
 
   console.log(`Congratulations, ${userName}!`);
 }
+
 export default startGame;

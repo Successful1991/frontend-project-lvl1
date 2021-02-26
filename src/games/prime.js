@@ -1,30 +1,29 @@
-import startGame from '../index.js';
 import randomInteger from '../secondary.js';
 
-function checkAnswer(value) {
+function isPrime(value) {
   for (let i = 2; i <= value / 2; i += 1) {
     if (value % i === 0) {
-      return 'no';
+      return false;
     }
   }
 
-  return 'yes';
+  return true;
 }
 
-function createQuestion() {
+function createTask() {
   const value = randomInteger(2, 100);
   return {
-    expression: value,
-    result: value,
+    question: value,
+    answer: isPrime(value) ? 'yes' : 'no',
   };
 }
 
-function prime() {
-  startGame(
-    'Answer "yes" if given number is prime. Otherwise answer "no".',
-    createQuestion,
-    checkAnswer,
-  );
+function prime(amountRaunds = 3) {
+  return {
+    taskDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+    createTask,
+    amountRaunds,
+  };
 }
 
 export default prime;
