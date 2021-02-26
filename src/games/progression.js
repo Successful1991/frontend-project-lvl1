@@ -13,7 +13,7 @@ function createProgression() {
 function hideNum(progression) {
   const newProgression = progression;
   const index = randomInteger(0, 9);
-  const hiddenValue = newProgression[index].toString();
+  const hiddenValue = (newProgression[index]).toString();
 
   newProgression[index] = '..';
 
@@ -24,7 +24,7 @@ function hideNum(progression) {
 }
 
 function createTask() {
-  const { newProgression:progression, hiddenValue } = hideNum(createProgression());
+  const { newProgression: progression, hiddenValue } = hideNum(createProgression());
   return {
     question: progression.join(' '),
     answer: hiddenValue,
