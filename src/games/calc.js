@@ -1,5 +1,16 @@
 import generateRandomInteger from '../utils.js';
 
+function calc(operand1, operand2, operator) {
+  switch (operator) {
+    case '+':
+      return (operand1 + operand2).toString();
+    case '-':
+      return (operand1 - operand2).toString();
+    default:
+      return (operand1 * operand2).toString();
+  }
+}
+
 function createTask() {
   const operand1 = generateRandomInteger(1, 20);
   const operand2 = generateRandomInteger(1, 20);
@@ -10,17 +21,6 @@ function createTask() {
     question: `${operand1} ${operator} ${operand2}`,
     answer: calc(operand1, operand2, operator),
   };
-}
-
-function calc(operand1, operand2, operator) {
-  switch (operator) {
-    case '+':
-      return (operand1 + operand2).toString();
-    case '-':
-      return (operand1 - operand2).toString();
-    default:
-      return (operand1 * operand2).toString();
-  }
 }
 
 export default {

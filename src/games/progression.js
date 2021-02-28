@@ -32,6 +32,6 @@ function createTask() {
 }
 
 export default {
-    taskDescription: 'What number is missing in the progression?',
-    createTask,
-  };
+  taskDescription: 'What number is missing in the progression?',
+  createTask,
+};
