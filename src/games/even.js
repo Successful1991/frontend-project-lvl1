@@ -1,14 +1,14 @@
 import generateRandomInteger from '../utils.js';
 
 function isEven(value) {
-  return value % 2 === 0 ? 'yes' : 'no';
+  return value % 2 === 0;
 }
 
 function createTask() {
   const value = generateRandomInteger(1, 100);
   return {
     question: value,
-    answer: isEven(value),
+    answer: isEven(value) ? 'yes' : 'no',
   };
 }
 

@@ -3,11 +3,11 @@ import generateRandomInteger from '../utils.js';
 function calc(operand1, operand2, operator) {
   switch (operator) {
     case '+':
-      return (operand1 + operand2).toString();
+      return operand1 + operand2;
     case '-':
-      return (operand1 - operand2).toString();
+      return operand1 - operand2;
     default:
-      return (operand1 * operand2).toString();
+      return operand1 * operand2;
   }
 }
 
@@ -19,7 +19,7 @@ function createTask() {
 
   return {
     question: `${operand1} ${operator} ${operand2}`,
-    answer: calc(operand1, operand2, operator),
+    answer: calc(operand1, operand2, operator).toString(),
   };
 }
 
