@@ -1,4 +1,4 @@
-import randomInteger from '../secondary.js';
+import generateRandomInteger from '../utils.js';
 
 function isPrime(value) {
   for (let i = 2; i <= value / 2; i += 1) {
@@ -11,19 +11,14 @@ function isPrime(value) {
 }
 
 function createTask() {
-  const value = randomInteger(2, 100);
+  const value = generateRandomInteger(2, 100);
   return {
     question: value,
     answer: isPrime(value) ? 'yes' : 'no',
   };
 }
 
-function getPrimeParam(amountRaunds = 3) {
-  return {
-    taskDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    createTask,
-    amountRaunds,
-  };
-}
-
-export default getPrimeParam;
+export default {
+  taskDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  createTask,
+};

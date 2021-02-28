@@ -1,7 +1,6 @@
-import randomInteger from '../secondary.js';
+import generateRandomInteger from '../utils.js';
 
-function createProgression() {
-  const step = randomInteger(2, 20);
+function createProgression(step) {
   const result = [];
 
   for (let i = 1; i <= 10; i += 1) {
@@ -10,9 +9,8 @@ function createProgression() {
   return result;
 }
 
-function hideNum(progression) {
+function hideValue(progression, index) {
   const newProgression = progression;
-  const index = randomInteger(0, 9);
   const hiddenValue = (newProgression[index]).toString();
 
   newProgression[index] = '..';
@@ -24,19 +22,16 @@ function hideNum(progression) {
 }
 
 function createTask() {
-  const { newProgression: progression, hiddenValue } = hideNum(createProgression());
+  const step = generateRandomInteger(2, 20);
+  const index = generateRandomInteger(0, 9);
+  const { newProgression: progression, hiddenValue } = hideValue(createProgression(step), index);
   return {
     question: progression.join(' '),
     answer: hiddenValue,
   };
 }
 
-function getProgressionParam(amountRaunds = 3) {
-  return {
+export default {
     taskDescription: 'What number is missing in the progression?',
     createTask,
-    amountRaunds,
   };
-}
-
-export default getProgressionParam;

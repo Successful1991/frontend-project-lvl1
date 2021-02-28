@@ -1,4 +1,4 @@
-import randomInteger from '../secondary.js';
+import generateRandomInteger from '../utils.js';
 
 function getGcd(answer) {
   const [divisor1, divisor2] = answer;
@@ -16,20 +16,15 @@ function getGcd(answer) {
 }
 
 function createTask() {
-  const value1 = randomInteger(1, 100);
-  const value2 = randomInteger(1, 100);
+  const value1 = generateRandomInteger(1, 100);
+  const value2 = generateRandomInteger(1, 100);
   return {
     question: `${value1} ${value2}`,
     answer: getGcd([value1, value2]),
   };
 }
 
-function getGcdParam(amountRaunds = 3) {
-  return {
-    taskDescription: 'Find the greatest common divisor of given numbers.',
-    createTask,
-    amountRaunds,
-  };
-}
-
-export default getGcdParam;
+export default {
+  taskDescription: 'Find the greatest common divisor of given numbers.',
+  createTask,
+};

@@ -1,19 +1,18 @@
-import randomInteger from '../secondary.js';
+import generateRandomInteger from '../utils.js';
+
+function isEven(value) {
+  return value % 2 === 0 ? 'yes' : 'no';
+}
 
 function createTask() {
-  const value = randomInteger(1, 100);
+  const value = generateRandomInteger(1, 100);
   return {
     question: value,
-    answer: value % 2 === 0 ? 'yes' : 'no',
+    answer: isEven(value),
   };
 }
 
-function getEvenParam(amountRaunds = 3) {
-  return {
-    taskDescription: 'Answer "yes" if the number is even, otherwise answer "no".',
-    createTask,
-    amountRaunds,
-  };
-}
-
-export default getEvenParam;
+export default {
+  taskDescription: 'Answer "yes" if the number is even, otherwise answer "no".',
+  createTask,
+};
