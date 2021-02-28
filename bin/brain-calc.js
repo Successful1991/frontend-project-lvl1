@@ -2,4 +2,4 @@
 import getCalcParam from '../src/games/calc.js';
 import startGame from '../src/index.js';
 
-startGame(getCalcParam, 3);
+startGame(getCalcParam);

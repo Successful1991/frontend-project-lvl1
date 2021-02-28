@@ -2,4 +2,4 @@
 import getPrimeParam from '../src/games/prime.js';
 import startGame from '../src/index.js';
 
-startGame(getPrimeParam, 3);
+startGame(getPrimeParam);
