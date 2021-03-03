@@ -24,11 +24,11 @@ function createTask() {
   const minValueStep = 2;
   const maxValueStep = 20;
   const step = generateRandomInteger(minValueStep, maxValueStep);
-
-  const progression = hideValue(createProgression(step), index);
+  const progression = createProgression(step);
+  const newProgression = hideValue(progression, index);
 
   return {
-    question: progression.join(' '),
+    question: newProgression.join(' '),
     answer: progression[index].toString(),
   };
 }
