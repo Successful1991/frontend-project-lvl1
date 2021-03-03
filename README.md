@@ -2,9 +2,9 @@
 [![Actions Status](https://github.com/Successful1991/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Successful1991/frontend-project-lvl1/actions)
 
 <a href="https://codeclimate.com/github/Successful1991/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/bc5027cd52bb2965c6d0/maintainability" /></a>
-# Brain-games
+# Brain games
 
-package include 5 brain-games
+package include 5 brain-games: 
 calculate, even, gcd, prime, progression.
 there are 3 rounds in each game
 
@@ -17,7 +17,6 @@ $ npm install
 $ make [name]
 ```
 
-## Examples
 
 ### game-even
 [![asciicast](https://asciinema.org/a/S6XWMoqs8Xz2jw3HAN9gEsPNc.svg)](https://asciinema.org/a/S6XWMoqs8Xz2jw3HAN9gEsPNc)

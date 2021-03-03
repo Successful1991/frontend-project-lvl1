@@ -2,18 +2,16 @@ import generateRandomInteger from '../utils.js';
 
 function createProgression(step) {
   const result = [];
+  const numberValues = 10;
 
-  for (let i = 1; i <= 10; i += 1) {
+  for (let i = 1; i <= numberValues; i += 1) {
     result.push(step * i);
   }
   return result;
 }
 
 function hideValue(progression, index) {
-  const newProgression = progression;
-  newProgression[index] = '..';
-
-  return newProgression;
+  return progression.map((value, i) => (i === index ? '..' : value));
 }
 
 function createTask() {
@@ -24,6 +22,7 @@ function createTask() {
   const minValueStep = 2;
   const maxValueStep = 20;
   const step = generateRandomInteger(minValueStep, maxValueStep);
+
   const progression = createProgression(step);
   const newProgression = hideValue(progression, index);
 
