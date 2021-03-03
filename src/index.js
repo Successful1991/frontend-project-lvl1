@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
-function startGame(parameters, roundsCount = 3) {
+function playGame(parameters, roundsCount = 3) {
   const { taskDescription, createTask } = parameters;
   const userName = greeting();
   console.log(taskDescription);
@@ -24,4 +24,4 @@ function startGame(parameters, roundsCount = 3) {
   console.log(`Congratulations, ${userName}!`);
 }
 
-export default startGame;
+export default playGame;

@@ -6,16 +6,20 @@ function calc(operand1, operand2, operator) {
       return operand1 + operand2;
     case '-':
       return operand1 - operand2;
-    default:
+    case '*':
       return operand1 * operand2;
+    default:
+      return null;
   }
 }
 
 function createTask() {
-  const operand1 = generateRandomInteger(1, 20);
-  const operand2 = generateRandomInteger(1, 20);
+  const minValue = 1;
+  const maxValue = 20;
+  const operand1 = generateRandomInteger(minValue, maxValue);
+  const operand2 = generateRandomInteger(minValue, maxValue);
   const operators = ['+', '-', '*'];
-  const operator = operators[generateRandomInteger(0, 2)];
+  const operator = operators[generateRandomInteger(0, operators.length - 1)];
 
   return {
     question: `${operand1} ${operator} ${operand2}`,

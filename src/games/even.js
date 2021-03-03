@@ -5,7 +5,9 @@ function isEven(value) {
 }
 
 function createTask() {
-  const value = generateRandomInteger(1, 100);
+  const minValue = 1;
+  const maxValue = 100;
+  const value = generateRandomInteger(minValue, maxValue);
   return {
     question: value,
     answer: isEven(value) ? 'yes' : 'no',

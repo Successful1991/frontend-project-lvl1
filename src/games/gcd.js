@@ -16,8 +16,10 @@ function getGcd(answer) {
 }
 
 function createTask() {
-  const value1 = generateRandomInteger(1, 100);
-  const value2 = generateRandomInteger(1, 100);
+  const minValue = 1;
+  const maxValue = 100;
+  const value1 = generateRandomInteger(minValue, maxValue);
+  const value2 = generateRandomInteger(minValue, maxValue);
   return {
     question: `${value1} ${value2}`,
     answer: getGcd([value1, value2]),

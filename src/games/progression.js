@@ -11,23 +11,25 @@ function createProgression(step) {
 
 function hideValue(progression, index) {
   const newProgression = progression;
-  const hiddenValue = (newProgression[index]).toString();
-
   newProgression[index] = '..';
 
-  return {
-    newProgression,
-    hiddenValue,
-  };
+  return newProgression;
 }
 
 function createTask() {
-  const step = generateRandomInteger(2, 20);
-  const index = generateRandomInteger(0, 9);
-  const { newProgression: progression, hiddenValue } = hideValue(createProgression(step), index);
+  const minValueIndex = 0;
+  const maxValueIndex = 9;
+  const index = generateRandomInteger(minValueIndex, maxValueIndex);
+
+  const minValueStep = 2;
+  const maxValueStep = 20;
+  const step = generateRandomInteger(minValueStep, maxValueStep);
+
+  const progression = hideValue(createProgression(step), index);
+
   return {
     question: progression.join(' '),
-    answer: hiddenValue,
+    answer: progression[index].toString(),
   };
 }
 

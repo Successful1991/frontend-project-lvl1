@@ -1,6 +1,10 @@
 import generateRandomInteger from '../utils.js';
 
 function isPrime(value) {
+  if (value < 2) {
+    return false;
+  }
+
   for (let i = 2; i <= value / 2; i += 1) {
     if (value % i === 0) {
       return false;
@@ -11,7 +15,9 @@ function isPrime(value) {
 }
 
 function createTask() {
-  const value = generateRandomInteger(2, 100);
+  const minValue = 2;
+  const maxValue = 100;
+  const value = generateRandomInteger(minValue, maxValue);
   return {
     question: value,
     answer: isPrime(value) ? 'yes' : 'no',
