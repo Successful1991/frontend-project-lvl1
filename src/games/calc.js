@@ -12,6 +12,9 @@ function calc(operand1, operand2, operator) {
       return null;
   }
 }
+function getRandomOperator(operators) {
+  return generateRandomInteger(0, operators.length - 1);
+}
 
 function createTask() {
   const minValue = 1;
@@ -19,7 +22,7 @@ function createTask() {
   const operand1 = generateRandomInteger(minValue, maxValue);
   const operand2 = generateRandomInteger(minValue, maxValue);
   const operators = ['+', '-', '*'];
-  const operator = operators[generateRandomInteger(0, operators.length - 1)];
+  const operator = operators[getRandomOperator(operators)];
 
   return {
     question: `${operand1} ${operator} ${operand2}`,

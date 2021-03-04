@@ -10,11 +10,15 @@ there are 3 rounds in each game
 
 ## Setup
 ```sh
-$ npm install
+npm install
 ```
 ## Start game
 ```shell script
-$ make [name]
+brain-calc
+brain-even
+brain-gcd
+brain-prime
+brain-progression
 ```
 
 
