@@ -15,11 +15,11 @@ function hideValue(progression, index) {
 
 function createTask() {
   const lengthProgression = 10;
-  const index = generateRandomInteger(lengthProgression - 1, 0);
+  const index = generateRandomInteger(0, lengthProgression - 1);
   const step = generateRandomInteger(1, 20);
 
   const progression = createProgression(step);
-  const newProgression = hideValue(progression, lengthProgression);
+  const newProgression = hideValue(lengthProgression, progression);
 
   return {
     question: newProgression.join(' '),

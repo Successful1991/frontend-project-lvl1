@@ -4,8 +4,8 @@
 <a href="https://codeclimate.com/github/Successful1991/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/bc5027cd52bb2965c6d0/maintainability" /></a>
 # Brain games
 
-package include 5 brain-games: </br>
-calculate, even, gcd, prime, progression.
+package include 5 brain-games:  
+calculate, even, gcd, prime, progression.  
 there are 3 rounds in each game
 
 ## Setup
@@ -13,7 +13,7 @@ there are 3 rounds in each game
 npm install
 ```
 ## Start game
-```shell script
+```sh
 brain-calc
 brain-even
 brain-gcd
