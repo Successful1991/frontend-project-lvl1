@@ -15,7 +15,7 @@ function isPrime(value) {
 }
 
 function createTask() {
-  const minValue = 2;
+  const minValue = 0;
   const maxValue = 100;
   const value = generateRandomInteger(minValue, maxValue);
   return {
