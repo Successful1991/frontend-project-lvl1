@@ -18,8 +18,8 @@ function createTask() {
   const index = generateRandomInteger(0, lengthProgression - 1);
   const step = generateRandomInteger(1, 20);
 
-  const progression = createProgression(step);
-  const newProgression = hideValue(lengthProgression, progression);
+  const progression = createProgression(lengthProgression, step);
+  const newProgression = hideValue(progression, index);
 
   return {
     question: newProgression.join(' '),
